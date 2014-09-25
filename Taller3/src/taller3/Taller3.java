@@ -19,7 +19,8 @@ public class Taller3 {
       
         
         
-   Rutinas.imprime();
+  boolean respuesta = Rutinas.busca(10);
+  
         
         
     }
