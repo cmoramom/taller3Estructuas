@@ -24,23 +24,17 @@ public class Rutinas {
     public static boolean busca(int x) {
         Stack unaPila=new Stack();
         unaPila  = pila1;
-        
-        
-        
-        
-        
-        
-        
         boolean existe=false;
         
+        Dato p = pila1.pop();
+        
+        if (p.getValor() == x){
+        
+            return true;
+        
+        }
         
         
-        
-        
-        
-        
-        
-        // adivinen...
         return existe;
     }
     
