@@ -27,20 +27,14 @@ public class Rutinas {
         Stack unaPila = new Stack();
         unaPila = pila1;
         boolean existe = false;
+        Dato p = unaPila.top;
 
-       while (existe == false && unaPila.top != null) {
-
-            Dato p = unaPila.top;
-            
+       while (existe == false && p != null) {
+   
             if (p.getValor() != x ) {
                 p = p.getDebajo();
             }else existe = true;
-          
-           
-            
-           
-
-        };
+        }
         return existe;
 
     }
