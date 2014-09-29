@@ -13,7 +13,7 @@ public class Rutinas {
 
     public static Stack pila1;
 
-   static {
+    static {
         pila1 = new Stack();
         pila1.push(10);
         pila1.push(20);
@@ -27,17 +27,20 @@ public class Rutinas {
         Stack unaPila = new Stack();
         unaPila = pila1;
         boolean existe = false;
-        Dato p;
 
-        do {
+       while (existe == false && unaPila.top != null) {
 
-            p = unaPila.pop();
-            existe = p.getValor() == x;
+            Dato p = unaPila.top;
+            
+            if (p.getValor() != x ) {
+                p = p.getDebajo();
+            }else existe = true;
+          
+           
+            
+           
 
-        } while  (existe = true);
-        
-        
-
+        };
         return existe;
 
     }
@@ -59,9 +62,7 @@ public class Rutinas {
     }
 
     public static void imprime() {
-        System.out.println(pila1);
+        System.out.println(pila1.toString());
     }
-
-    
 
 }

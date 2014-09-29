@@ -5,6 +5,8 @@
  */
 package taller3;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author carlos
@@ -34,7 +36,7 @@ public class PilasBase extends javax.swing.JFrame {
         buscarPila = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
+        imprimirPila = new javax.swing.JRadioButton();
         BtnGenerarAccion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,13 +73,13 @@ public class PilasBase extends javax.swing.JFrame {
         buscarPila.setText("Buscar");
 
         buttonGroup2.add(jRadioButton3);
-        jRadioButton3.setText("jRadioButton3");
+        jRadioButton3.setText("Ordernar");
 
         buttonGroup2.add(jRadioButton4);
-        jRadioButton4.setText("jRadioButton4");
+        jRadioButton4.setText("Extraer");
 
-        buttonGroup2.add(jRadioButton5);
-        jRadioButton5.setText("jRadioButton5");
+        buttonGroup2.add(imprimirPila);
+        imprimirPila.setText("Imprimir Pila");
 
         BtnGenerarAccion.setText("Generar");
         BtnGenerarAccion.addActionListener(new java.awt.event.ActionListener() {
@@ -97,15 +99,13 @@ public class PilasBase extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioButton3)
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioButton5))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(buscarPila)
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioButton4))
-                            .addComponent(BtnGenerarAccion))))
+                            .addComponent(jRadioButton3)
+                            .addComponent(buscarPila)
+                            .addComponent(BtnGenerarAccion))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton4)
+                            .addComponent(imprimirPila))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -120,10 +120,10 @@ public class PilasBase extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton5))
-                .addGap(42, 42, 42)
+                    .addComponent(imprimirPila))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(BtnGenerarAccion)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
         );
 
         pack();
@@ -135,9 +135,10 @@ public class PilasBase extends javax.swing.JFrame {
         int numeroBuscado = Integer.parseInt(txtnumeroDigitado.getText());
         if (buscarPila.isSelected()){
         
-        Rutinas.busca(numeroBuscado);
-            
-        }
+        boolean respBusca = Rutinas.busca(numeroBuscado);
+            if (respBusca) JOptionPane.showMessageDialog(this, "Número encontrado");
+            else JOptionPane.showMessageDialog(this, "Número NO encontrado");
+        }else if (imprimirPila.isSelected()) Rutinas.imprime();
         
         
         
@@ -183,11 +184,11 @@ public class PilasBase extends javax.swing.JFrame {
     private javax.swing.JButton BtnGenerarAccion;
     private javax.swing.JRadioButton buscarPila;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JRadioButton imprimirPila;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JTextField txtnumeroDigitado;
     // End of variables declaration//GEN-END:variables
 }

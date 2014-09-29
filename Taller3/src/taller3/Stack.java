@@ -11,7 +11,7 @@ package taller3;
  */
 public class Stack {
     
-    private Dato top;
+    public Dato top;
     
 
     
@@ -32,6 +32,19 @@ public class Stack {
             aux.setDebajo(null);
         }
         return aux;
+    }
+    
+    
+    
+     @Override
+    public String toString() {
+        String s="Pila:";
+        Dato aux=top;  //ubico el primer elemento de la pila
+        while (aux!=null) { //hago un ciclo para recorrer hacia abajo los elementos
+            s+="\n"+aux;
+            aux=aux.getDebajo();
+        }
+        return  s;
     }
     
     
