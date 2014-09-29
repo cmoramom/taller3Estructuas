@@ -13,7 +13,7 @@ public class Rutinas {
 
     public static Stack pila1;
 
-    static {
+   static {
         pila1 = new Stack();
         pila1.push(10);
         pila1.push(20);
@@ -31,7 +31,7 @@ public class Rutinas {
 
         do {
 
-            p = pila1.pop();
+            p = unaPila.pop();
             existe = p.getValor() == x;
 
         } while  (existe = true);
@@ -61,5 +61,7 @@ public class Rutinas {
     public static void imprime() {
         System.out.println(pila1);
     }
+
+    
 
 }

@@ -15,11 +15,13 @@ public class Taller3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        new PilasBase().setVisible(true);
      
       
         
         
-  boolean respuesta = Rutinas.busca(10);
+ 
   
         
         
