@@ -42,21 +42,69 @@ public class Rutinas {
     //ejercicio 3
     public static Dato extrae(int x) {
         Stack unaPila = new Stack();
-        Dato aux = null;//...
-        // adivinen...
+        
+        Dato p;
+        Dato aux = null;
+        p = pila1.top;
+        //boolean existe = false;
+       while ( p != null) {
+   
+           // existe = p.getValor() == x;
+           // p.getDebajo();
+            
+            if (p.getValor() != x ){
+                
+                unaPila.push(p.getValor()); 
+                aux = p.getDebajo();
+                pila1.pop();
+                p = aux;
+                
+           
+           }else p = p.getDebajo();
+            
+         
+       }
+       aux = unaPila.top;
+       pila1.top = aux;
+       
+       
+     
+       
+       
         return aux;
+        
+        
+        
+        
+        
+        
+        
+        
+       
     }
 
     //ejercicio 4
     public static void ordena() {
         Stack unaPila1 = new Stack();
         Stack unaPila2 = new Stack();
-        // adivinen...
+        Dato p = pila1.top; 
+        while (p !=  null){
+        
+        
+        
+        
+        
+        }
+        
+        
+      
 
     }
 
     public static void imprime() {
         System.out.println(pila1.toString());
     }
+    
+   
 
 }
