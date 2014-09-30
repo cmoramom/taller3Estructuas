@@ -88,7 +88,11 @@ public class Rutinas {
         Stack unaPila1 = new Stack();
         Stack unaPila2 = new Stack();
         Dato p = pila1.top; 
+        int mayor = p.getValor();
         while (p !=  null){
+            
+            
+            p = p.getDebajo();
         
         
         
