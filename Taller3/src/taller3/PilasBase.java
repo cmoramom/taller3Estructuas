@@ -34,7 +34,7 @@ public class PilasBase extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtnumeroDigitado = new javax.swing.JTextField();
         buscarPila = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        ordernarPila = new javax.swing.JRadioButton();
         extraerNumPila = new javax.swing.JRadioButton();
         imprimirPila = new javax.swing.JRadioButton();
         BtnGenerarAccion = new javax.swing.JButton();
@@ -72,8 +72,8 @@ public class PilasBase extends javax.swing.JFrame {
         buttonGroup2.add(buscarPila);
         buscarPila.setText("Buscar");
 
-        buttonGroup2.add(jRadioButton3);
-        jRadioButton3.setText("Ordernar");
+        buttonGroup2.add(ordernarPila);
+        ordernarPila.setText("Ordernar Pila");
 
         buttonGroup2.add(extraerNumPila);
         extraerNumPila.setText("Extraer");
@@ -99,7 +99,7 @@ public class PilasBase extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton3)
+                            .addComponent(ordernarPila)
                             .addComponent(buscarPila)
                             .addComponent(BtnGenerarAccion))
                         .addGap(18, 18, 18)
@@ -119,7 +119,7 @@ public class PilasBase extends javax.swing.JFrame {
                     .addComponent(extraerNumPila))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton3)
+                    .addComponent(ordernarPila)
                     .addComponent(imprimirPila))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(BtnGenerarAccion)
@@ -132,21 +132,28 @@ public class PilasBase extends javax.swing.JFrame {
 
     private void BtnGenerarAccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGenerarAccionActionPerformed
         
-        int numeroBuscado = Integer.parseInt(txtnumeroDigitado.getText());
+        
         
         if (buscarPila.isSelected()){
-        
+            int numeroBuscado = Integer.parseInt(txtnumeroDigitado.getText());        
             boolean respBusca = Rutinas.busca(numeroBuscado);
             if (respBusca) JOptionPane.showMessageDialog(this, "Número encontrado");
             else JOptionPane.showMessageDialog(this, "Número NO encontrado");
         }
         
               
-        if (imprimirPila.isSelected()) Rutinas.imprime();
+        if (imprimirPila.isSelected())
+            Rutinas.imprime();
         
         
         
-        if (extraerNumPila.isSelected()) Rutinas.extrae(numeroBuscado);
+        if (extraerNumPila.isSelected()){ 
+            int numeroBuscado = Integer.parseInt(txtnumeroDigitado.getText());
+            Rutinas.extrae(numeroBuscado);
+        }
+            
+        if (ordernarPila.isSelected()) 
+            Rutinas.ordena();
         
         
         
@@ -197,7 +204,7 @@ public class PilasBase extends javax.swing.JFrame {
     private javax.swing.JRadioButton imprimirPila;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton ordernarPila;
     private javax.swing.JTextField txtnumeroDigitado;
     // End of variables declaration//GEN-END:variables
 }
