@@ -16,7 +16,9 @@ public class Tarea1Recursividad {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new ImprimeNumero().setVisible(true);
+        
+        
+                
     }
     
 }
